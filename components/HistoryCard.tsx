@@ -2,17 +2,21 @@ import { View, Text, Image, TouchableOpacity } from 'react-native';
 import dayjs from 'dayjs';
 import { Colors } from '@/constants/Colors';
 import { HistoryType } from '@/constants/history';
+import { useRouter } from 'expo-router';
+
 const HistoryCard = ({
+  id,
   title,
   imageUrl,
   summary,
   category,
   createdAt,
 }: HistoryType) => {
+  const router = useRouter();
   const isRecentHistory = dayjs(createdAt).isAfter(dayjs().subtract(7, "day"));
 
   return (
-    <TouchableOpacity onPress={() => {}}>
+    <TouchableOpacity onPress={() => router.push(`./history/${id}`)}>
       <View
         style={{
           marginBottom: 25,

@@ -1,33 +1,16 @@
 import { useState, useEffect } from 'react';
-import { Platform, ScrollView, FlatList} from 'react-native';
+import { Platform, FlatList} from 'react-native';
 import { getStatusBarHeight } from 'react-native-iphone-x-helper';
 
-import { supabase } from '@/utils/supabaseClient';
-import type { HistoryType } from '@/constants/history';
+import { useHistoryStore } from '@/utils/historyStore';
 import HistoryCard from '@/components/HistoryCard';
 
 const StatusBarHeight = getStatusBarHeight(true);
 
 export default function HomeScreen() {
-  const [history, setHistory] = useState<HistoryType[]>([]);
+  const { history, fetchHistory } = useHistoryStore();
 
   useEffect(() => {
-    const fetchHistory = async () => {
-      const { data } = await supabase
-          .from("history")
-          .select(
-            `
-            *,
-            category:category(
-              id,
-              name,
-              color
-            )
-          `
-          ).order('createdAt', { ascending: false });
-      setHistory(data || []);
-    };
-    
     fetchHistory();
   }, []);
 
