@@ -1,6 +1,8 @@
 import { Tabs } from 'expo-router';
 import React from 'react';
 import { Platform } from 'react-native';
+import EntypoIcon from 'react-native-vector-icons/Entypo';
+import Iconicon from 'react-native-vector-icons/Ionicons';
 
 import { Colors } from '@/constants/Colors';
 import { useColorScheme } from '@/hooks/useColorScheme';
@@ -25,7 +27,15 @@ export default function TabLayout() {
         name="index"
         options={{
           title: 'Home',
-          // tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
+          tabBarIcon: ({ color, size }) => <EntypoIcon name="home" size={size} color={color} />,
+        }}
+      />
+
+      <Tabs.Screen
+        name="analytics"
+        options={{
+          title: 'Analytics',
+          tabBarIcon: ({ color, size }) => <Iconicon name="analytics" size={size} color={color} />,
         }}
       />
     </Tabs>

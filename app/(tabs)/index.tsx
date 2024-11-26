@@ -24,7 +24,7 @@ export default function HomeScreen() {
               color
             )
           `
-          )
+          ).order('createdAt', { ascending: false });
       setHistory(data || []);
     };
     
