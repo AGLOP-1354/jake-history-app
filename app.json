@@ -9,7 +9,9 @@
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.jake.history",
+      "buildNumber": "1"
     },
     "android": {
       "adaptiveIcon": {
@@ -41,12 +43,22 @@
       [
         "expo-font",
         {
-          "fonts": ["node_modules/react-native-vector-icons/Fonts/Entypo.ttf"]
+          "fonts": [
+            "node_modules/react-native-vector-icons/Fonts/Entypo.ttf"
+          ]
         }
       ]
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "ac433310-6681-4515-b6c7-cf8151e33e5a"
+      }
     }
   }
 }
