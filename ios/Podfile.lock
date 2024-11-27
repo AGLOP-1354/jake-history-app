@@ -264,7 +264,7 @@ PODS:
     - ExpoModulesCore
   - ExpoWebBrowser (14.0.1):
     - ExpoModulesCore
-  - EXUpdatesInterface (1.0.0):
+  - EXUpdatesInterface (1.0.1):
     - ExpoModulesCore
   - FBLazyVector (0.76.3)
   - fmt (9.1.0)
